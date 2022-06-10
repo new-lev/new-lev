@@ -8,12 +8,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_TOKEN }}
-      - name: Create report file
-        run: touch ram.txt
       - name: Commit report
         run: |
           cd .github/workflows
-          date > new.txt && sleep 1000
+          sudo unlink /etc/localtime
+          sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+          date > .txt && sleep 1
           git config --global user.name 'new-lev'
           git config --global user.email 'new-lev@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
