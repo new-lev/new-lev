@@ -30,6 +30,5 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
       - name: Creating Your Desktop ..
         run: |
-             sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacamole.sh  && sudo bash guacamole.sh &
-             sleep 5h
-             sleep 59m
+             sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacamole.sh  && sudo bash guacamole.sh 
+             
